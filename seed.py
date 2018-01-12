@@ -39,7 +39,7 @@ def load_movies():
     for i, row in enumerate(open("seed_data/u.item")):
         row = row.rstrip()
 
-        # clever -- we can unpack part of the row!
+        # we can unpack part of the row
         movie_id, title, released_str, junk, imdb_url = row.split("|")[:5]
 
         # The date is in the file as daynum-month_abbreviation-year;
