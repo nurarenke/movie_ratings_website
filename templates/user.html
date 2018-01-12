@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="well spaced" style="width:97%">
+  <h2>{{ user.email }} ({{ user.user_id }})</h2>
+
+  <b><p style="color:red">Age: {{ user.age }}</p>
+  <p style="color:red">Zipcode: {{ user.zipcode }}</p></b>
+
+  {% if user.ratings %}
+
+    <h3>Ratings</h3>
+    <ul>
+    {% for rating in user.ratings %}
+      <li>
+        <a href="/movies/{{ rating.movie_id }}">{{ rating.movie.title }}</a>
+        was rated {{ rating.score }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}
